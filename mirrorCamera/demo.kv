@@ -1,0 +1,28 @@
+<MirrorCamera>
+    canvas.before:
+        PushMatrix
+        Translate:
+            xy: (self.x + self.width / 2, self.y + self.height / 2)
+        Rotate:
+            angle: 180
+            axis: (0, 0, 1.0)
+        Translate:
+            xy: (-self.x - self.width / 2, -self.y - self.height / 2)
+    canvas.after:
+        PopMatrix
+    Button:
+        text: 'Capture'
+        size_hint_y: None
+        height: '48dp'
+        on_press: root.capture()
+<Demo>:
+	Screen:
+		name: 'screen1'
+		CameraWidget:
+			id: camera
+			orientation: 'vertical'
+			MirrorCamera:
+				id: camera1
+				index: 0
+				resolution: (640, 480)
+				play: True
