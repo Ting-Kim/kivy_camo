@@ -10,11 +10,8 @@
             xy: (-self.x - self.width / 2, -self.y - self.height / 2)
     canvas.after:
         PopMatrix
-    Button:
-        text: 'Capture'
-        size_hint_y: None
-        height: '48dp'
-        on_press: root.capture()
+
+
 <Demo>:
 	Screen:
 		name: 'screen1'
@@ -26,3 +23,8 @@
 				index: 0
 				resolution: (640, 480)
 				play: True
+            Button:
+                text: 'Capture'
+                size_hint_y: None
+                height: '48dp'
+                on_press: root.capture()

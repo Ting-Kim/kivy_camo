@@ -27,6 +27,7 @@ Builder.load_string('''
         allow_stretch: True
 
     Button:
+        id: capture_botton
         text: 'Capture'
         size_hint_y: None
         height: '48dp'
@@ -40,6 +41,7 @@ class CameraClick(BoxLayout):
         Function to capture the images and give them the names
         according to their captured time and date.
         '''
+        print(self.ids)
         camera = self.ids['camera']
         timestr = time.strftime("%Y%m%d_%H%M%S")
         camera.export_to_png("IMG_{}.png".format(timestr))
