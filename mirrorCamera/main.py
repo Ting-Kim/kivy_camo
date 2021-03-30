@@ -76,8 +76,8 @@ class Demo(ScreenManager):
         # select instance for id from demo.kv
         camera = self.ids.camera1
         timestr = time.strftime("%Y%m%d_%H%M%S")
-        file_name = "IMG_{}.png".format(timestr)
-        img = camera.export_as_image(file_name)
+        file_name = "photo_gallery/IMG_{}".format(timestr)
+        img = camera.export_as_image("{}.png".format(file_name))
         now = datetime.datetime.now()
         print(now)
         # kivi.core.image.Image to kivy.graphics.texture.Texture
@@ -91,7 +91,7 @@ class Demo(ScreenManager):
         # Image processing
         imageProcess = ImageProcess(file_name, newvalue)
         blurred_image = imageProcess.adapt_blur()
-        print(datetime.datetime.now() - now )
+        print(datetime.datetime.now() - now)
         print("Captured")
 
     """
@@ -99,7 +99,7 @@ class Demo(ScreenManager):
     def capture(self, *args):
         camera = self.ids.camera1
         timestr = time.strftime("%Y%m%d_%H%M%S")
-        file_name = "IMG_{}.png".format(timestr)
+        file_name = "photo_gallery/IMG_{}.png".format(timestr)
         camera.export_to_png(file_name)
         imageProcess = ImageProcess(file_name)
         blurred_image = imageProcess.adapt_blur()

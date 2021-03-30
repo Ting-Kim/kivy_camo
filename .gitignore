@@ -140,3 +140,6 @@ pip-delete-this-directory.txt
 .venv
 venv/
 ENV/
+
+# image storage
+photo_gallery/
